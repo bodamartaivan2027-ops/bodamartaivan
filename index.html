@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Marta & Iván · 4 de septiembre de 2027</title>
+<style>
+@font-face{font-family:"Great Vibes";src:url(fonts/GreatVibes-Regular.ttf)}
+@font-face{font-family:"Parisienne";src:url(fonts/Parisienne-Regular.ttf)}
+@font-face{font-family:"Cormorant";src:url(fonts/Cormorant.ttf);font-weight:300 700}
+@font-face{font-family:"Cormorant";src:url(fonts/Cormorant-Italic.ttf);font-style:italic;font-weight:300 700}
+@font-face{font-family:"Courier Prime";src:url(fonts/CourierPrime-Regular.ttf)}
+:root{--paper:#f7f2ea;--card:#fdfaf4;--ink:#3d2b26;--wine:#8c2f39;--gold:#b9924a;--soft:#c9a99b;--muted:#7a655d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--paper)}
+body{font-family:"Cormorant",serif;color:var(--ink);font-weight:500;font-size:18px;line-height:1.4;min-height:100vh;
+  background:radial-gradient(ellipse at 20% 0%,rgba(255,255,255,.6),transparent 50%),radial-gradient(ellipse at 90% 100%,rgba(185,146,74,.12),transparent 50%),var(--paper)}
+.wrap{max-width:520px;margin:0 auto;padding:18px 18px 40px;text-align:center}
+.lang{display:flex;justify-content:flex-end;gap:4px;font-family:"Courier Prime",monospace;font-size:12px;letter-spacing:.12em}
+.lang button{background:none;border:1px solid transparent;color:var(--muted);padding:4px 8px;border-radius:12px;font:inherit;cursor:pointer}
+.lang button.on{border-color:var(--gold);color:var(--wine)}
+.kicker{font-family:"Parisienne",cursive;font-size:26px;color:var(--muted);margin-top:6px}
+h1{font-family:"Great Vibes",cursive;font-size:64px;font-weight:400;color:var(--wine);line-height:1.05}
+h1 small{font-size:34px;color:var(--gold);margin:0 6px;vertical-align:middle}
+.path{width:220px;height:30px;margin:6px auto 2px;display:block}
+.date{font-size:17px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-top:6px}
+.place{color:var(--muted);letter-spacing:.05em}
+.count{display:flex;justify-content:center;gap:14px;margin:16px 0 6px;font-family:"Courier Prime",monospace}
+.count div{min-width:58px;background:var(--card);border:1px solid var(--soft);border-radius:10px;padding:8px 4px}
+.count b{display:block;font-size:22px;color:var(--wine)}
+.count span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.loco{width:120px;margin:6px auto 0;display:block}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.grid a{display:block;background:var(--card);border:1px solid var(--soft);border-radius:14px;padding:16px 10px 12px;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 8px rgba(61,43,38,.06);transition:transform .15s}
+.grid a:active{transform:scale(.97)}
+.grid svg{width:38px;height:38px;stroke:var(--wine);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
+.grid b{display:block;font-family:"Parisienne",cursive;font-weight:400;font-size:22px;color:var(--wine);line-height:1.1}
+.grid span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-family:"Courier Prime",monospace;margin-top:4px}
+.soon-tag{display:inline-block;font-size:10px;margin-top:6px;padding:2px 8px;border-radius:10px;background:rgba(185,146,74,.15);color:var(--gold);font-family:"Courier Prime",monospace;letter-spacing:.1em}
+/* panels */
+.panel{display:none;text-align:left;background:var(--card);border:1px solid var(--soft);border-radius:16px;padding:22px 20px 24px;margin-top:18px;box-shadow:0 2px 10px rgba(61,43,38,.07)}
+.panel.on{display:block}
+.panel h2{font-family:"Parisienne",cursive;font-weight:400;font-size:34px;color:var(--wine);line-height:1}
+.panel .sub{font-family:"Courier Prime",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.panel h3{font-size:21px;font-weight:700;margin-top:18px}
+.panel p{margin-top:6px}
+.panel ul{margin:6px 0 0 18px}
+.panel li{margin-top:4px}
+.btn{display:inline-block;margin-top:14px;padding:10px 22px;border:1.5px solid var(--wine);border-radius:24px;color:var(--wine);text-decoration:none;font-weight:700;letter-spacing:.05em}
+.btn.solid{background:var(--wine);color:#fdfaf4}
+.back{display:inline-block;margin-top:22px;color:var(--muted);text-decoration:none;font-family:"Courier Prime",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.photo{margin-top:10px;aspect-ratio:5/4;border:1px solid var(--soft);overflow:hidden;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-style:italic;background:rgba(255,255,255,.4)}
+.photo.wide{aspect-ratio:2/1}
+.photo img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.soon{text-align:center;padding:26px 10px;font-style:italic;color:var(--muted);font-size:20px}
+.note{font-size:15px;color:var(--muted);font-style:italic}
+/* timeline */
+.tl{position:relative;margin:10px 0 0 4px;padding-left:46px}
+.tl:before{content:"";position:absolute;left:14px;top:8px;bottom:8px;border-left:2px dashed var(--gold)}
+.stop{position:relative;padding:0 0 26px}
+.stop:last-child{padding-bottom:0}
+.stop svg{position:absolute;left:-46px;top:-2px;width:30px;height:30px;padding:4px;background:var(--card);border:1.5px solid var(--wine);border-radius:50%;stroke:var(--wine);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.stop.now svg{background:var(--wine);stroke:#fdfaf4}
+.stop .y{font-family:"Courier Prime",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.stop h3{margin-top:0;font-family:"Parisienne",cursive;font-weight:400;font-size:26px;color:var(--wine);line-height:1.05}
+.stop p{margin-top:3px;font-size:17px}
+footer{margin-top:34px;color:var(--wine);letter-spacing:.3em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><button data-l="es" class="on">ES</button><button data-l="ca">CA</button></div>
+
+  <div id="home">
+    <div class="kicker" data-i="kicker">¡Nos casamos!</div>
+    <h1>Marta <small>&amp;</small> Iván</h1>
+    <svg class="path" viewBox="0 0 280 36" fill="none"><path d="M6 24 C 50 4, 90 34, 140 18 S 230 2, 274 22" stroke="#b9924a" stroke-width="1.6" stroke-dasharray="1 5" stroke-linecap="round"/><g fill="#c9a99b"><path transform="translate(44 8) scale(.42)" d="M12 21s-7-4.4-9.5-8.5C.2 8.7 2.6 4 7 4c2.3 0 3.9 1.3 5 2.8C13.1 5.3 14.7 4 17 4c4.4 0 6.8 4.7 4.5 8.5C19 16.6 12 21 12 21z"/><path transform="translate(136 10) scale(.34)" d="M12 21s-7-4.4-9.5-8.5C.2 8.7 2.6 4 7 4c2.3 0 3.9 1.3 5 2.8C13.1 5.3 14.7 4 17 4c4.4 0 6.8 4.7 4.5 8.5C19 16.6 12 21 12 21z"/><path transform="translate(226 4) scale(.42)" d="M12 21s-7-4.4-9.5-8.5C.2 8.7 2.6 4 7 4c2.3 0 3.9 1.3 5 2.8C13.1 5.3 14.7 4 17 4c4.4 0 6.8 4.7 4.5 8.5C19 16.6 12 21 12 21z"/></g></svg>
+    <div class="date" data-i="date">4 de septiembre de 2027</div>
+    <div class="place">Pelayos de la Presa · Madrid</div>
+
+    <div class="count"><div><b id="d">–</b><span data-i="days">días</span></div><div><b id="h">–</b><span data-i="hours">horas</span></div><div><b id="m">–</b><span data-i="mins">min</span></div></div>
+
+    <svg class="loco" viewBox="0 0 80 40" fill="none" stroke="#8c2f39" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M58 9c-2-3 1-6 4-5c0-3 5-3 5 0c3-1 5 2 3 5z" stroke="#c9a99b" stroke-width="1.5"/><path d="M70 6c0-3 4-4 4-1" stroke="#c9a99b" stroke-width="1.5"/>
+      <rect x="8" y="8" width="18" height="20" rx="1.5" fill="#fdfaf4"/><rect x="12" y="12" width="7" height="7" fill="#fdfaf4"/>
+      <rect x="26" y="15" width="36" height="13" rx="6.5" fill="#fdfaf4"/><rect x="50" y="8" width="7" height="8" rx="1" fill="#fdfaf4"/><rect x="37" y="11" width="7" height="5" rx="2" fill="#fdfaf4"/>
+      <path d="M62 22l10 6H62z" fill="#fdfaf4"/><path d="M4 36h74" stroke="#b9924a" stroke-width="1.5"/>
+      <circle cx="15" cy="32" r="4" fill="#fdfaf4"/><circle cx="35" cy="31.5" r="4.5" fill="#fdfaf4"/><circle cx="48" cy="31.5" r="4.5" fill="#fdfaf4"/><circle cx="60" cy="33" r="3" fill="#fdfaf4"/><path d="M35 31.5h13" stroke-width="1.4"/>
+    </svg>
+
+    <nav class="grid">
+      <a href="#taquilla"><svg viewBox="0 0 24 24"><path d="M3 8h18v10H3zM3 8l2-3h14l2 3M9 12h6M12 10v4"/></svg><b data-i="n1">Taquilla</b><span data-i="s1">Confirmar asistencia</span></a>
+      <a href="#salidas"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M6 8h6M6 11h8M6 14h5M3 21h18"/></svg><b data-i="n2">Panel de salidas</b><span data-i="s2">Programa del día</span></a>
+      <a href="#anden"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-10a6 6 0 0112 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg><b data-i="n3">Andén</b><span data-i="s3">Cómo llegar</span></a>
+      <a href="#consigna"><svg viewBox="0 0 24 24"><path d="M3 18v-8M3 14h18v4M21 14v-2a2 2 0 00-2-2h-8v4M3 10V7h4a2 2 0 012 2v1"/><path d="M3 18v1M21 18v1"/></svg><b data-i="n4">Consigna</b><span data-i="s4">Alojamiento</span></a>
+      <a href="#mapa"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></svg><b data-i="n5">Mapa del viaje</b><span data-i="s5">Nuestra historia</span></a>
+      <a href="#album"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M8 6l2-2h4l2 2"/><circle cx="12" cy="12.5" r="3.5"/></svg><b data-i="n6">Álbum de viaje</b><span data-i="s6">Fotos</span></a>
+      <a href="#libro"><svg viewBox="0 0 24 24"><path d="M4 4h7a3 3 0 013 3v13a2 2 0 00-2-2H4zM20 4h-6a3 3 0 00-3 3v13a2 2 0 012-2h7z"/></svg><b data-i="n7">Libro de viajes</b><span data-i="s7">Dedicatorias</span></a>
+      <a href="#bar"><svg viewBox="0 0 24 24"><path d="M9 18V7l10-2v11M9 18a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM19 16a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/></svg><b data-i="n8">Vagón disco</b><span data-i="s8">Playlist</span></a>
+    </nav>
+  </div>
+
+  <section class="panel" id="taquilla">
+    <h2 data-i="n1">Taquilla</h2><div class="sub" data-i="s1">Confirmar asistencia</div>
+    <p data-i="t1">Dinos si vienes y si tienes alguna restricción alimentaria. Con un minuto nos ayudas mucho a organizarlo todo.</p>
+    <a class="btn solid" href="https://forms.gle/svP5ZjDJsa7RD9xC9" data-i="b1">Confirmar asistencia</a>
+    <br><a class="back" href="#" data-i="back">← Volver</a>
+  </section>
+
+  <section class="panel" id="salidas">
+    <h2 data-i="n2">Panel de salidas</h2><div class="sub" data-i="s2">Programa del día</div>
+    <h3>17:00 · <span data-i="cer">Ceremonia</span></h3>
+    <p data-i="cerp">Estación de Pelayos de la Presa.</p>
+    <h3 data-i="fie">Después · Celebración</h3>
+    <p data-i="fiep">En la casa: Callejón Virgen del Pilar, 8. Cóctel, cena y fiesta.</p>
+    <p class="note" data-i="horp">Horarios detallados, próximamente.</p>
+    <a class="back" href="#" data-i="back">← Volver</a>
+  </section>
+
+  <section class="panel" id="anden">
+    <h2 data-i="n3">Andén</h2><div class="sub" data-i="s3">Cómo llegar</div>
+    <h3 data-i="a1">La ceremonia · Estación de Pelayos de la Presa</h3>
+    <p data-i="a1p">A las 17:00. La antigua estación del pueblo, hoy restaurada.</p>
+    <div class="photo"><img src="img/estacion.jpg" alt="Estación de Pelayos de la Presa"></div>
+    <a class="btn" href="https://maps.app.goo.gl/x3Kqoyrd1AJArsgR7" data-i="maps">Abrir en Google Maps</a>
+    <h3 data-i="a2">La celebración · La casa</h3>
+    <p>Callejón Virgen del Pilar, 8 · Pelayos de la Presa</p>
+    <div class="photo wide"><img src="img/casa.jpg" alt="La casa"></div>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Callej%C3%B3n+Virgen+del+Pilar+8%2C+Pelayos+de+la+Presa%2C+Madrid" data-i="maps">Abrir en Google Maps</a>
+    <h3 data-i="a3">Desde Madrid</h3>
+    <ul>
+      <li data-i="a3a"><b>Autobús interurbano 551</b> (Madrid – San Martín de Valdeiglesias), con parada en Pelayos de la Presa. Su cabecera habitual es Príncipe Pío; durante las obras de la A-5 sale de Cuatro Vientos. Comprobad la cabecera y los horarios en crtm.es unos días antes.</li>
+      <li data-i="a3b"><b>En coche</b>: por la M-501 (carretera de los Pantanos), alrededor de una hora desde el centro.</li>
+    </ul>
+    <h3 data-i="a4">Desde Barcelona</h3>
+    <p data-i="a4p">Tren a Madrid (Atocha o Chamartín) y desde allí autobús 551 o coche. Información sobre transporte organizado, próximamente.</p>
+    <a class="back" href="#" data-i="back">← Volver</a>
+  </section>
+
+  <section class="panel" id="consigna"><h2 data-i="n4">Consigna</h2><div class="sub" data-i="s4">Alojamiento</div>
+    <p data-i="c0">Algunas opciones en el propio Pelayos de la Presa, a un paso de la casa y de la estación:</p>
+    <h3 data-i="c1">Camping Monasterio de Pelayos</h3>
+    <p data-i="c1p">Bungalows de madera para 2, 4 y 6 personas y mobile homes para 4 y 6, con baño propio y porche; piscina. Junto al pantano de San Juan.</p>
+    <a class="btn" href="https://campingmonasteriodepelayos.com/" data-i="web">Ver web</a>
+    <h3>Villa Piluca</h3>
+    <p data-i="c2p">Villas independientes con dos habitaciones dobles y sofá cama, patio privado, jardines y piscina. Av. del Arquitecto García Benito, 6.</p>
+    <a class="btn" href="https://villapiluca.com/" data-i="web">Ver web</a>
+    <p class="note" style="margin-top:18px" data-i="c3">Iremos añadiendo más opciones a medida que vayamos hablando con otros alojamientos para que reserven plazas para la boda.</p>
+    <a class="back" href="#" data-i="back">← Volver</a></section>
+  <section class="panel" id="mapa"><h2 data-i="n5">Mapa del viaje</h2><div class="sub" data-i="s5">Nuestra historia</div>
+    <p class="note" data-i="m0">Todas las estaciones de este tren, desde la primera hasta la próxima parada.</p>
+    <div class="tl">
+      <div class="stop"><svg viewBox="0 0 24 24"><path d="M9 21V8l3-5 3 5v13M9 12h6M9 16h6M6 21h12"/></svg><div class="y">Módena · 2018</div><h3 data-i="m1">Todo comenzó en…</h3><p data-i="m1p">Un Erasmus, una ciudad pequeña y dos personas que no se conocían de nada.</p></div>
+      <div class="stop"><svg viewBox="0 0 24 24"><path d="M3 4l9 17 9-17c-6-2.5-12-2.5-18 0z"/><circle cx="10" cy="9" r="1.2"/><circle cx="14" cy="12" r="1.2"/><circle cx="11" cy="14" r="1.2"/></svg><div class="y">Nápoles · 2018</div><h3 data-i="m2">La primera escapada</h3><p data-i="m2p">Pizza, caos y la certeza de que aquello iba en serio.</p></div>
+      <div class="stop"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18"/></svg><div class="y">Barcelona · Madrid · 2019</div><h3 data-i="m3">Primeras visitas</h3><p data-i="m3p">De vuelta en casa, a 600 km. Trenes, aviones y fines de semana que se hacían cortos.</p></div>
+      <div class="stop"><svg viewBox="0 0 24 24"><path d="M3 21V9l5-3v15M8 21V12l5-3v12M13 21V13l5-3v11M3 21h18"/></svg><div class="y">Barcelona · 2020 – 2021</div><h3 data-i="m4">En la misma ciudad</h3><p data-i="m4p">Por fin sin distancia.</p></div>
+      <div class="stop"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg><div class="y">Madrid · 2022 – 2023</div><h3 data-i="m5">Viviendo juntos</h3><p data-i="m5p">Nuestra primera casa.</p></div>
+      <div class="stop"><svg viewBox="0 0 24 24"><path d="M2 16V8h12l4 2 4 3v3H2zM2 11h12M14 8v5"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><div class="y">2023</div><h3 data-i="m6">La furgo</h3><p data-i="m6p">Decidimos comprar nuestra furgo y empezar a viajar.</p></div>
+      <div class="stop"><svg viewBox="0 0 24 24"><path d="M2 20l7-12 4 7 3-4 6 9zM9 8V4M9 4h4l-1 1.5L13 7H9"/></svg><div class="y">2023</div><h3 data-i="m7">Un hobby compartido</h3><p data-i="m7p">Y empezamos a escalar juntos.</p></div>
+      <div class="stop"><svg viewBox="0 0 24 24"><path d="M7 14s-4-3-4-6a4 4 0 018 0c0 3-4 6-4 6zM17 20s-4-3-4-6a4 4 0 018 0c0 3-4 6-4 6z"/><path d="M9 11c2 1 4 1 6 1" stroke-dasharray="1.5 2"/></svg><div class="y">París · Madrid · Calafell · 2024 – 2025</div><h3 data-i="m8">A distancia otra vez</h3><p data-i="m8p">Tocó volver a distanciarnos para conseguir nuestros objetivos.</p></div>
+      <div class="stop"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.5-8.5C.2 7.7 2.6 3 7 3c2.3 0 3.9 1.3 5 2.8C13.1 4.3 14.7 3 17 3c4.4 0 6.8 4.7 4.5 8.5C19 15.6 12 20 12 20z"/></svg><div class="y">2026</div><h3 data-i="m9">Juntos de nuevo</h3><p data-i="m9p">Apoyándonos y disfrutando. ¡A darlo todo!</p></div>
+      <div class="stop now"><svg viewBox="0 0 80 40" stroke-width="3"><rect x="8" y="8" width="18" height="20" rx="1.5"/><rect x="26" y="15" width="36" height="13" rx="6.5"/><rect x="50" y="8" width="7" height="8" rx="1"/><path d="M62 22l10 6H62zM4 36h74"/><circle cx="15" cy="32" r="4"/><circle cx="35" cy="31.5" r="4.5"/><circle cx="48" cy="31.5" r="4.5"/><circle cx="60" cy="33" r="3"/></svg><div class="y" data-i="m10y">Próxima parada · 4 · 09 · 2027</div><h3 data-i="m10">Pelayos de la Presa</h3><p data-i="m10p">Destino: ¡nuestra boda! El único tren para toda la vida.</p></div>
+    </div>
+    <a class="back" href="#" data-i="back">← Volver</a></section>
+  <section class="panel" id="album"><h2 data-i="n6">Álbum de viaje</h2><div class="sub" data-i="s6">Fotos</div>
+    <p data-i="al1">Un álbum compartido para todas las fotos y vídeos del día. Sube las tuyas y descárgate las que quieras; cuantas más, mejor.</p>
+    <p class="note" data-i="al2">Para subir fotos hace falta una cuenta de Google; para verlas y descargarlas, no.</p>
+    <a class="btn solid" href="https://photos.app.goo.gl/1dUAPhkDAfACeJCBA" data-i="al3">Abrir el álbum</a>
+    <br><a class="back" href="#" data-i="back">← Volver</a></section>
+  <section class="panel" id="libro"><h2 data-i="n7">Libro de viajes</h2><div class="sub" data-i="s7">Dedicatorias</div>
+    <p data-i="l1">Déjanos unas palabras para el viaje: un recuerdo, un consejo, un deseo. Las leeremos nosotros dos y las guardaremos para siempre.</p>
+    <a class="btn solid" href="https://forms.gle/teZoAvwcVjsTAyQd7" data-i="l2">Escribir una dedicatoria</a>
+    <br><a class="back" href="#" data-i="back">← Volver</a></section>
+  <section class="panel" id="bar"><h2 data-i="n8">Vagón disco</h2><div class="sub" data-i="s8">Playlist</div>
+    <p data-i="v1">La música de la fiesta la hacemos entre todos. Añade la canción (o las canciones) que no pueden faltar en nuestra lista colaborativa de Spotify.</p>
+    <p class="note" data-i="v2">Al abrir el enlace, Spotify te pedirá unirte como colaborador; acepta y ya podrás añadir canciones. Hace falta una cuenta de Spotify (la gratuita sirve).</p>
+    <a class="btn solid" href="https://open.spotify.com/playlist/1SMtFY7fQDxJ5Nnh2ShG1C?pt=86f08014f08a03dceffaeeb443a4228a&pi=gACeWth7TbWAQ" data-i="v3">Añadir canciones</a>
+    <br><a class="back" href="#" data-i="back">← Volver</a></section>
+
+  <footer>♥ ♥ ♥</footer>
+</div>
+
+<script>
+const I={
+es:{kicker:"¡Nos casamos!",date:"4 de septiembre de 2027",days:"días",hours:"horas",mins:"min",soon:"próximamente",back:"← Volver",maps:"Abrir en Google Maps",
+ n1:"Taquilla",s1:"Confirmar asistencia",n2:"Panel de salidas",s2:"Programa del día",n3:"Andén",s3:"Cómo llegar",n4:"Consigna",s4:"Alojamiento",
+ n5:"Mapa del viaje",s5:"Nuestra historia",n6:"Álbum de viaje",s6:"Fotos",n7:"Libro de viajes",s7:"Dedicatorias",n8:"Vagón disco",s8:"Playlist",
+ t1:"Dinos si vienes y si tienes alguna restricción alimentaria. Con un minuto nos ayudas mucho a organizarlo todo.",b1:"Confirmar asistencia",
+ cer:"Ceremonia",cerp:"Estación de Pelayos de la Presa.",fie:"Después · Celebración",fiep:"En la casa: Callejón Virgen del Pilar, 8. Cóctel, cena y fiesta.",horp:"Horarios detallados, próximamente.",
+ a1:"La ceremonia · Estación de Pelayos de la Presa",a1p:"A las 17:00. La antigua estación del pueblo, hoy restaurada.",foto:"Foto de la estación",a2:"La celebración · La casa",
+ a3:"Desde Madrid",a3a:"<b>Autobús interurbano 551</b> (Madrid – San Martín de Valdeiglesias), con parada en Pelayos de la Presa. Su cabecera habitual es Príncipe Pío; durante las obras de la A-5 sale de Cuatro Vientos. Comprobad la cabecera y los horarios en crtm.es unos días antes.",
+ a3b:"<b>En coche</b>: por la M-501 (carretera de los Pantanos), alrededor de una hora desde el centro.",a4:"Desde Barcelona",a4p:"Tren a Madrid (Atocha o Chamartín) y desde allí autobús 551 o coche. Información sobre transporte organizado, próximamente.",
+ m0:"Todas las estaciones de este tren, desde la primera hasta la próxima parada.",m1:"Todo comenzó en…",m1p:"Un Erasmus, una ciudad pequeña y dos personas que no se conocían de nada.",m2:"La primera escapada",m2p:"Pizza, caos y la certeza de que aquello iba en serio.",m3:"Primeras visitas",m3p:"De vuelta en casa, a 600 km. Trenes, aviones y fines de semana que se hacían cortos.",m4:"En la misma ciudad",m4p:"Por fin sin distancia.",m5:"Viviendo juntos",m5p:"Nuestra primera casa.",m6:"La furgo",m6p:"Decidimos comprar nuestra furgo y empezar a viajar.",m7:"Un hobby compartido",m7p:"Y empezamos a escalar juntos.",m8:"A distancia otra vez",m8p:"Tocó volver a distanciarnos para conseguir nuestros objetivos.",m9:"Juntos de nuevo",m9p:"Apoyándonos y disfrutando. ¡A darlo todo!",m10y:"Próxima parada · 4 · 09 · 2027",m10:"Pelayos de la Presa",m10p:"Destino: ¡nuestra boda! El único tren para toda la vida.",
+ c0:"Algunas opciones en el propio Pelayos de la Presa, a un paso de la casa y de la estación:",c1:"Camping Monasterio de Pelayos",c1p:"Bungalows de madera para 2, 4 y 6 personas y mobile homes para 4 y 6, con baño propio y porche; piscina. Junto al pantano de San Juan.",c2p:"Villas independientes con dos habitaciones dobles y sofá cama, patio privado, jardines y piscina. Av. del Arquitecto García Benito, 6.",c3:"Iremos añadiendo más opciones a medida que vayamos hablando con otros alojamientos para que reserven plazas para la boda.",web:"Ver web",
+ l1:"Déjanos unas palabras para el viaje: un recuerdo, un consejo, un deseo. Las leeremos nosotros dos y las guardaremos para siempre.",l2:"Escribir una dedicatoria",
+ v1:"La música de la fiesta la hacemos entre todos. Añade la canción (o las canciones) que no pueden faltar en nuestra lista colaborativa de Spotify.",v2:"Al abrir el enlace, Spotify te pedirá unirte como colaborador; acepta y ya podrás añadir canciones. Hace falta una cuenta de Spotify (la gratuita sirve).",v3:"Añadir canciones",
+ soonp:"Pronto daremos información.",
+ al1:"Un álbum compartido para todas las fotos y vídeos del día. Sube las tuyas y descárgate las que quieras; cuantas más, mejor.",al2:"Para subir fotos hace falta una cuenta de Google; para verlas y descargarlas, no.",al3:"Abrir el álbum"},
+ca:{kicker:"Ens casem!",date:"4 de setembre de 2027",days:"dies",hours:"hores",mins:"min",soon:"properament",back:"← Tornar",maps:"Obrir a Google Maps",
+ n1:"Taquilla",s1:"Confirmar assistència",n2:"Panell de sortides",s2:"Programa del dia",n3:"Andana",s3:"Com arribar-hi",n4:"Consigna",s4:"Allotjament",
+ n5:"Mapa del viatge",s5:"La nostra història",n6:"Àlbum de viatge",s6:"Fotos",n7:"Llibre de viatges",s7:"Dedicatòries",n8:"Vagó disco",s8:"Playlist",
+ t1:"Digues-nos si vindràs i si tens alguna restricció alimentària. Amb un minut ens ajudes molt a organitzar-ho tot.",b1:"Confirmar assistència",
+ cer:"Cerimònia",cerp:"Estació de Pelayos de la Presa.",fie:"Després · Celebració",fiep:"A la casa: Callejón Virgen del Pilar, 8. Còctel, sopar i festa.",horp:"Horaris detallats, properament.",
+ a1:"La cerimònia · Estació de Pelayos de la Presa",a1p:"A les 17:00. L'antiga estació del poble, avui restaurada.",foto:"Foto de l'estació",a2:"La celebració · La casa",
+ a3:"Des de Madrid",a3a:"<b>Autobús interurbà 551</b> (Madrid – San Martín de Valdeiglesias), amb parada a Pelayos de la Presa. La capçalera habitual és Príncipe Pío; durant les obres de l'A-5 surt de Cuatro Vientos. Comproveu la capçalera i els horaris a crtm.es uns dies abans.",
+ a3b:"<b>Amb cotxe</b>: per la M-501 (carretera de los Pantanos), al voltant d'una hora des del centre.",a4:"Des de Barcelona",a4p:"Tren a Madrid (Atocha o Chamartín) i des d'allà autobús 551 o cotxe. Informació sobre transport organitzat, properament.",
+ m0:"Totes les estacions d'aquest tren, des de la primera fins a la pròxima parada.",m1:"Tot va començar a…",m1p:"Un Erasmus, una ciutat petita i dues persones que no es coneixien de res.",m2:"La primera escapada",m2p:"Pizza, caos i la certesa que allò anava de debò.",m3:"Primeres visites",m3p:"De tornada a casa, a 600 km. Trens, avions i caps de setmana que es feien curts.",m4:"A la mateixa ciutat",m4p:"Per fi sense distància.",m5:"Vivint junts",m5p:"La nostra primera casa.",m6:"La furgo",m6p:"Vam decidir comprar la nostra furgo i començar a viatjar.",m7:"Un hobby compartit",m7p:"I vam començar a escalar junts.",m8:"A distància un altre cop",m8p:"Va tocar tornar a distanciar-nos per aconseguir els nostres objectius.",m9:"Junts de nou",m9p:"Donant-nos suport i gaudint. A donar-ho tot!",m10y:"Pròxima parada · 4 · 09 · 2027",m10:"Pelayos de la Presa",m10p:"Destí: el nostre casament! L'únic tren per a tota la vida.",
+ c0:"Algunes opcions al mateix Pelayos de la Presa, a un pas de la casa i de l'estació:",c1:"Càmping Monasterio de Pelayos",c1p:"Bungalous de fusta per a 2, 4 i 6 persones i mobile homes per a 4 i 6, amb bany propi i porxo; piscina. Al costat del pantà de San Juan.",c2p:"Vil·les independents amb dues habitacions dobles i sofà llit, pati privat, jardins i piscina. Av. del Arquitecto García Benito, 6.",c3:"Anirem afegint més opcions a mesura que parlem amb altres allotjaments perquè reservin places per al casament.",web:"Veure web",
+ l1:"Deixa'ns unes paraules per al viatge: un record, un consell, un desig. Les llegirem nosaltres dos i les guardarem per sempre.",l2:"Escriure una dedicatòria",
+ v1:"La música de la festa la fem entre tots. Afegeix la cançó (o les cançons) que no poden faltar a la nostra llista col·laborativa de Spotify.",v2:"En obrir l'enllaç, Spotify et demanarà unir-te com a col·laborador; accepta i ja podràs afegir cançons. Cal un compte de Spotify (el gratuït serveix).",v3:"Afegir cançons",
+ soonp:"Aviat donarem informació.",
+ al1:"Un àlbum compartit per a totes les fotos i vídeos del dia. Puja les teves i descarrega't les que vulguis; com més, millor.",al2:"Per pujar fotos cal un compte de Google; per veure-les i descarregar-les, no.",al3:"Obrir l'àlbum"}};
+let lang="es"; try{lang=localStorage.getItem("lang")||"es"}catch(e){}
+function setLang(l){lang=l; try{localStorage.setItem("lang",l)}catch(e){}
+  document.documentElement.lang=l;
+  document.querySelectorAll("[data-i]").forEach(el=>{const v=I[l][el.dataset.i]; if(v!=null) el.innerHTML=v});
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===l));}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+function route(){const id=location.hash.slice(1); const p=document.getElementById(id);
+  const open=p&&p.classList.contains("panel");
+  document.querySelectorAll(".panel").forEach(s=>s.classList.toggle("on",s===p&&open));
+  document.getElementById("home").style.display=open?"none":"block"; window.scrollTo(0,0);}
+addEventListener("hashchange",route);
+function tick(){const t=new Date(2027,8,4,17,0,0)-new Date(); if(t<0)return;
+  d.textContent=Math.floor(t/864e5); h.textContent=Math.floor(t/36e5)%24; m.textContent=Math.floor(t/6e4)%60;}
+setLang(lang); route(); tick(); setInterval(tick,30000);
+</script>
+</body>
+</html>
